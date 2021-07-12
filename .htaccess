@@ -1,0 +1,47 @@
+RewriteEngine on
+RewriteRule ^$ site/
+
+RewriteRule ^doi-mat-khau$ /project_chay/site/?act=changepass [L]
+RewriteRule ^dang-xuat$ /project_chay/site/?act=logout [L]
+RewriteRule ^gio-hang$ /project_chay/site/?act=cartview [L]
+RewriteRule ^thanh-toan$ /project_chay/site/?act=checkout [L]
+RewriteRule ^xac-nhan-gio-hang$ /project_chay/site/?act=savebill [L]
+RewriteRule ^cam-on$ /project_chay/site/?act=thankyou [L]
+RewriteRule ^quen-mat-khau$ /project_chay/site/?act=forgotpass [L]
+RewriteRule ^thanh-toan-thanh-cong/$ /project_chay/site/?act=ttthanhcong [L]
+
+RewriteRule ^dang-nhap$ /project_chay/site/?act=login [L]
+RewriteRule ^dang-ky$ /project_chay/site/?act=register [L]
+RewriteRule ^trang-chu$ /project_chay/site/?act=home [L]
+RewriteRule ^gioi-thieu$ /project_chay/site/?act=gioithieu [L]
+RewriteRule ^checkout$ /project_chay/site/?act=checkout [L]
+RewriteRule ^paymentchecking$ /project_chay/site/?act=paymentchecking [L]
+RewriteRule ^createcheckoutsession$ /project_chay/site/?act=createcheckoutsession [L]
+RewriteRule ^stripecheckout$ /project_chay/site/?act=stripecheckout [L]
+RewriteRule ^createklarnaqr$ /project_chay/site/?act=createklarnaqr [L]
+RewriteRule ^saveorder$ /project_chay/site/?act=saveorder [L]
+RewriteRule ^lien-he$ /project_chay/site/?act=contact [L]
+RewriteRule ^bao-hanh$ /project_chay/site/?act=aboutus [L]
+RewriteRule ^chinh-sach-van-chuyen$ /project_chay/site/?act=termofservice [L]
+RewriteRule ^impressum$ /project_chay/site/?act=impressum [L]
+RewriteRule ^privacy$ /project_chay/site/?act=privacypolicy [L]
+RewriteRule ^notification$ /project_chay/site/?act=notification [L]
+RewriteRule ^donecheckout$ /project_chay/site/?act=donecheckout [L]
+
+RewriteRule ^san-pham/([a-zA-Z0-9-]+)/trang-([0-9]+)$ /project_chay/site/?act=product&slug2=$1&Page=$2 [L]
+RewriteRule ^lang/(.*)$ /project_chay/site/?lang=$1 [L]
+
+
+RewriteRule ^san-pham-chi-tiet/([a-zA-Z0-9-]+)$ /project_chay/site/?act=detail&slug=$1&id=$2 [L]
+
+RewriteRule ^hang/([a-zA-Z0-9-]+)-([0-9]+)/trang-([0-9]+)$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug=$1 [L]
+RewriteRule ^danh-muc/([a-zA-Z0-9-]+)-([0-9]+)/trang-([0-9]+)$ /project_chay/site/?act=product&maloai=$2&Page=$3&slug1=$1 [L]
+
+
+php_value upload_max_filesize 200M 
+php_value post_max_size 200M 
+php_value max_execution_time 300 
+php_value max_input_time 300
+
+
+ErrorDocument 404 /project_chay/site/views/Error404.php
